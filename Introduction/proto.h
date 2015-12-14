@@ -5,15 +5,21 @@
 ** Login   <kogel_c@etna-alternance.net>
 **
 ** Started on  Thu Nov  5 11:11:10 2015 KOGEL Caroline
-** Last update Fri Nov  6 23:27:46 2015 KOGEL Caroline
+** Last update Mon Dec 14 17:15:19 2015 KOGEL Caroline
 */
 
 #ifndef PROTO_H_
 # define PROTO_H_
 
+/* Libmy */
+void	my_putchar(char c);
 void	my_putstr(char *str);
 int	my_strcmp(char *s1, char *s2);
-void	my_putchar(char c);
 char	*my_strdup(char *str);
+
+/* Other */
+int	my_is_alpha(char *c);
+char	arguments(int argnum, char **arg);
+char	window(char **arg);
 
 #endif /* !PROTO_H_ */

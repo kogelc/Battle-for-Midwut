@@ -7,9 +7,8 @@
 ** Started on  Fri Oct 30 09:40:05 2015 KOGEL Caroline
 ** Last update Mon Dec 14 14:58:42 2015 KOGEL Caroline
 */
-void	my_putstr(char *str);
-int	my_strcmp(char *s1, char *s2);
-int     my_is_alpha(char *c);
+
+#include "proto.h"
 
 char	arguments(int argnum, char **arg)
 {
