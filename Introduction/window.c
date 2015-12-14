@@ -13,7 +13,7 @@ char    window(char **arg)
     {
   my_putstr("\n--------------------------------------------------------------\n\n");
   my_putstr("Welcome Battle for Midwut \n");
-  my_putstr("Name =>");
+  my_putstr("Name => ");
   my_putstr(arg[2]);
   my_putstr("\n\n--------------------------------------------------------------\n\n");
   return (0);

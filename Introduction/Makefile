@@ -5,13 +5,12 @@
 ## Login   <kogel_c@etna-alternance.net>
 ##
 ## Started on  Fri Oct 23 09:50:33 2015 KOGEL Caroline
-## Last update Mon Dec 14 17:38:13 2015 KOGEL Caroline
+## Last update Sat Nov  7 16:45:54 2015 KOGEL Caroline
 ##
 
 CC = gcc
 NAME = sta
-SRC = $(wildcard *.c) \
-      libmy/my_putchar.c \
+SRC = libmy/my_putchar.c \
       libmy/my_isneg.c \
       libmy/my_put_nbr.c \
       libmy/my_swap.c \
@@ -20,15 +19,14 @@ SRC = $(wildcard *.c) \
       libmy/my_getnbr.c \
       libmy/my_strcpy.c \
       libmy/my_strncpy.c \
-      my_strcmp.c \
-      my_strncmp.c \
-      my_strcat.c \
-      my_strncat.c \
-      my_strstr.c \
-      my_strdup.c \
-      my_str_to_wordtab.c
-
-
+      libmy/my_strcmp.c \
+      libmy/my_strncmp.c \
+      libmy/my_strcat.c \
+      libmy/my_strncat.c \
+      libmy/my_strstr.c \
+      libmy/my_strdup.c \
+      libmy/my_str_to_wordtab.c \
+      $(wildcard *.c)
 
 INC = $(wildcard *.h)
 OBJ = $(SRC:.c=.o)
