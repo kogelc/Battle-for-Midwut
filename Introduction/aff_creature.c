@@ -22,12 +22,15 @@ void	aff_creature(t_creature *crea)
   my_put_nbr(move->lvl);
   my_putstr("\n PV : ");
   my_put_nbr(move->pv);
-  my_putstr("\n");
+  my_putstr("\n\n");
   move = move;
 }
 
 char	my_round(char **choise)
 {
+  my_putstr("Que souhaitez-vous faire ?\n");
+  my_putstr("magic catch : Essayer d'attraper le pokemon\n");
+  my_putstr("help me !!! : Fuite\n");
   my_putstr("Votre tour>");
   *choise = readLine();
   while ((my_strcmp(*choise, "magic catch") != 0)
@@ -39,3 +42,5 @@ char	my_round(char **choise)
     }
   return (**choise);
 }
+
+

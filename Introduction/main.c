@@ -26,6 +26,5 @@ int	main(int argc, char **argv)
   window(argv);
   aff_creature(crea);
   my_round(&choise);
-
   return(0);
 }
