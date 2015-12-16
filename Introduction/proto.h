@@ -21,10 +21,12 @@ char	*my_strdup(char *str);
 void    my_put_nbr(int n);
 
 /* Other */
+t_creature *getCreature();
+char        *readLine();
 int	my_is_alpha(char *c);
 char	arguments(int argnum, char **arg);
 char	window(char **arg);
-t_creature *getCreature();
 void    aff_creature(t_creature *crea);
+char  my_round(char **choise);
 
 #endif /* !PROTO_H_ */

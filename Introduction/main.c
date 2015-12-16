@@ -15,7 +15,9 @@ int	main(int argc, char **argv)
 {
   int	verif;
   t_creature *crea;
+  char *choise;
 
+  choise = 0;
   crea = NULL;
   crea = getCreature();
   verif = arguments(argc, argv);
@@ -23,5 +25,7 @@ int	main(int argc, char **argv)
     return (0);
   window(argv);
   aff_creature(crea);
+  my_round(&choise);
+
   return(0);
 }
