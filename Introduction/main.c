@@ -25,7 +25,7 @@ int	main(int argc, char **argv)
     return (0);
   window(argv);
   aff_creature(crea);
-  my_round(&choise);
+  my_round(&choise, crea);
   if (*choise == 'q')
     return(0);
   return(0);

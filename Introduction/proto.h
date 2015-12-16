@@ -27,7 +27,8 @@ int	my_is_alpha(char *c);
 char	arguments(int argnum, char **arg);
 char	window(char **arg);
 void    aff_creature(t_creature *crea);
-char  my_round(char **choise);
+char  my_round(char **choise, t_creature *crea);
 void     my_escape(char *choise);
+void my_capture  (t_creature *crea);
 
 #endif /* !PROTO_H_ */

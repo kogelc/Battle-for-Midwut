@@ -5,10 +5,11 @@
 ** Login   <kogel_c@etna-alternance.net>
 **
 ** Started on  Wed Dec 16 11:35:04 2015 KOGEL Caroline
-** Last update Wed Dec 16 14:28:31 2015 KOGEL Caroline
+** Last update Wed Dec 16 17:54:13 2015 KOGEL Caroline
 */
 #include "proto.h"
 #include <stdlib.h>
+#include <time.h>
 
 
 void	aff_creature(t_creature *crea)
@@ -26,7 +27,7 @@ void	aff_creature(t_creature *crea)
   move = move;
 }
 
-char	my_round(char **choise)
+char	my_round(char **choise, t_creature *crea)
 {
   my_putstr("\033[0;33mQue souhaitez-vous faire ?\n");
   my_putstr("magic catch : Essayer d'attraper le pokemon\n");
@@ -43,17 +44,43 @@ char	my_round(char **choise)
       *choise = readLine();
     }
   if ((my_strcmp(*choise, "help me !!!") != 1))
-       my_escape(*choise);
+    my_escape(*choise);
+  if ((my_strcmp(*choise, "magic catch") != 1))
+    my_capture(crea);
   return (**choise);
 }
 
-void     my_escape(char *choise)
+void	my_capture(t_creature *crea)
 {
-  t_creature    *crea;
+  int	rnd;
+  char	*choise;
+  t_creature	*move;
+
+  choise = 0;
+  move = crea;
+  srand (time(NULL));
+  rnd = rand() % 3 + 1;
+  if (rnd == 3)
+    {
+      my_putstr("Felicitation, pokemon capture avec succes !!\n");
+      my_putstr(move->name);
+    }
+  else
+    my_putstr("Le pokemon s'est liberer; il vous attaque ");
+    my_putstr("et vous pousse a fuire \n");
+  crea = getCreature();
+  aff_creature(crea);
+  move = move;
+  my_round(&choise, crea);
+}
+
+void	my_escape(char *choise)
+{
+  t_creature	*crea;
 
   crea = NULL;
   crea = getCreature();
   my_putstr("\033[01;31m\nVous prenez lachement la fuite ...\n\033[m");
   aff_creature(crea);
-  my_round(&choise);
+  my_round(&choise, crea);
 }
