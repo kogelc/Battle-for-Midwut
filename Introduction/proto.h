@@ -28,5 +28,6 @@ char	arguments(int argnum, char **arg);
 char	window(char **arg);
 void    aff_creature(t_creature *crea);
 char  my_round(char **choise);
+void     my_escape(char *choise);
 
 #endif /* !PROTO_H_ */
