@@ -11,15 +11,20 @@
 #ifndef PROTO_H_
 # define PROTO_H_
 
+#include "base.h"
+
 /* Libmy */
 void	my_putchar(char c);
 void	my_putstr(char *str);
 int	my_strcmp(char *s1, char *s2);
 char	*my_strdup(char *str);
+void    my_put_nbr(int n);
 
 /* Other */
 int	my_is_alpha(char *c);
 char	arguments(int argnum, char **arg);
 char	window(char **arg);
+t_creature *getCreature();
+void    aff_creature(t_creature *crea);
 
 #endif /* !PROTO_H_ */
