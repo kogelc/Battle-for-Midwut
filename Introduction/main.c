@@ -14,10 +14,12 @@
 int	main(int argc, char **argv)
 {
   int	verif;
+  t_team *begin;
   t_creature	*crea;
   char	*choise;
 
   choise = 0;
+  begin = NULL;
   crea = NULL;
   crea = getCreature();
   verif = arguments(argc, argv);
@@ -25,7 +27,7 @@ int	main(int argc, char **argv)
     return (0);
   window(argv);
   aff_creature(crea);
-  my_round(&choise, crea);
+  my_round(&choise, crea, begin);
   if (*choise == 'q')
     return(0);
   return(0);
