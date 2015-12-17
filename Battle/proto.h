@@ -34,5 +34,6 @@ t_team	*catch(t_creature *crea, t_team *begin);
 void	aff_catch(t_team *myteam);
 char menu_battle(char **choise, t_creature *crea, t_team *begin);
 void aff_myteam (t_team *myteam, char **choise, t_creature *crea);
+char menu_attack(char **choise, t_creature *crea, t_team *myteam);
 
 #endif /* !PROTO_H_ */
