@@ -21,14 +21,15 @@ int	main(int argc, char **argv)
   choise = 0;
   begin = NULL;
   crea = NULL;
-  crea = getCreature();
   verif = arguments(argc, argv);
   if (verif == 0)
     return (0);
   window(argv);
-  aff_creature(crea);
   my_round(&choise, crea, begin);
   if (*choise == 'q')
+  {
+    free(choise);
     return(0);
+  }
   return(0);
 }

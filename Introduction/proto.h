@@ -28,7 +28,7 @@ char	arguments(int argnum, char **arg);
 char	window(char **arg);
 void    aff_creature(t_creature *crea);
 char  my_round(char **choise, t_creature *crea, t_team *begin);
-void     my_escape(char *choise, t_team *begin);
+void     my_escape(t_team *begin);
 void my_capture  (t_creature *crea, t_team *begin);
 t_team *catch(t_creature *crea, t_team *begin);
 void aff_catch(t_team *myteam);

@@ -47,9 +47,18 @@ void	aff_catch(t_team *myteam)
   t_team	*move;
 
   move = myteam;
-  my_putstr("Resumé de la creature\n Nom:");
+  my_putstr("\nResumé de la creature:\n\nNom: ");
   my_putstr(move->creature->name);
-  my_putstr("Niveau ");
+  my_putstr("\nNiveau: ");
   my_put_nbr(move->creature->lvl);
+  my_putstr("\nPV: ");
+  my_put_nbr(move->creature->pv);
+  my_putstr("\nPV max: ");
+  my_put_nbr(move->creature->pvmax);
+  my_putstr("\nPM: ");
+  my_put_nbr(move->creature->pm);
+  my_putstr("\nPM max: ");
+  my_put_nbr(move->creature->pmmax);
+  my_putstr("\n\n--------------------------------------------------------------\n\n");
   move = move;
 }

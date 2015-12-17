@@ -27,23 +27,25 @@ void	aff_creature(t_creature *crea)
 
 char	my_round(char **choise, t_creature *crea, t_team *begin)
 {
-  my_putstr("\033[0;33mQue souhaitez-vous faire ?\n");
-  my_putstr("magic catch : Essayer d'attraper la creature\n");
-  my_putstr("help me !!! : Fuite\n");
+  crea = getCreature();
+  aff_creature(crea);
+  my_putstr("\033[0;36mQue souhaitez-vous faire ?\n");
+  my_putstr("\033[0;33mm : magic catch : Essayer d'attraper la creature\n");
+  my_putstr("h :help me !!! : Fuite\n");
   my_putstr("q : quitter le jeu\n\n\033[m");
   my_putstr("\033[01;34mVotre tour> \033[m");
   *choise = readLine();
-  while ((my_strcmp(*choise, "magic catch") != 0)
-	 && (my_strcmp(*choise, "help me !!!") != 0)
+  while ((my_strcmp(*choise, "m") != 0)
+	 && (my_strcmp (*choise, "h") != 0)
 	 && (my_strcmp(*choise, "q") != 0))
     {
       my_putstr("\033[0;31mCeci n'est pas une option valide\n\033[m");
       my_putstr("\033[01;34mVotre tour> \033[m");
       *choise = readLine();
     }
-  if ((my_strcmp(*choise, "help me !!!") != 1))
-    my_escape(*choise, begin);
-  if ((my_strcmp(*choise, "magic catch") != 1))
+  if ((my_strcmp(*choise, "h") == 0))
+    my_escape(begin);
+  if ((my_strcmp(*choise, "m") == 0))
     my_capture(crea, begin);
   return (**choise);
 }
@@ -62,28 +64,27 @@ void	my_capture(t_creature *crea, t_team *begin)
   rnd = rand() % 3 + 1;
   if (rnd == 3)
     {
-      my_putstr("Felicitation, creature capturé avec succes !!\n");
+      my_putstr("\033[01;37m\nFelicitation, creature capturé avec succes !!\n\033[m");
       myteam = catch(crea, begin);
       aff_catch(myteam);
     }
   else
   {
-    my_putstr("La creature s'est liberer; elle vous attaque ");
-    my_putstr("et vous pousse a fuire \n");
+    my_putstr("\033[01;37m\nLa creature s'est liberer; elle vous attaque ");
+    my_putstr("et vous pousse a fuire \n\033[m");
+    my_putstr("\n--------------------------------------------------------------\n\n");
   }
-  crea = getCreature();
-  aff_creature(crea);
   move = move;
   my_round(&choise, crea, begin);
 }
 
-void	my_escape(char *choise, t_team *begin)
+void	my_escape(t_team *begin)
 {
-   t_creature	*crea;
+  t_creature	*crea;
+  char *choise;
 
+  choise = 0;
   crea = NULL;
-  crea = getCreature();
   my_putstr("\033[01;31m\nVous prenez lachement la fuite ...\n\033[m");
-  aff_creature(crea);
   my_round(&choise, crea, begin);
 }
