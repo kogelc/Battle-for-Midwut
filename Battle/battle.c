@@ -37,6 +37,8 @@ char	menu_battle(char **choise, t_creature *crea, t_team *myteam)
 
 char	menu_attack(char **choise, t_creature *crea, t_team *myteam)
 {
+  crea = getCreature();
+  aff_creature(crea);
   my_putstr("\033[0;36m\nQuelle attaque voulez-vous lancer\n");
   my_putstr("s: Slash\nf: Fire\ng: Gamble\nr: Rest\nm: Magic catch\n");
   my_putstr("q: Quitter le combat\n\033[m");
