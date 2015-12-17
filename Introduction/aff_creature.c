@@ -88,5 +88,6 @@ void	my_escape(t_team *begin)
   choise = 0;
   crea = NULL;
   my_putstr("\033[01;31m\nVous prenez lachement la fuite ...\n\033[m");
+    my_putstr("\n--------------------------------------------------------------\n\n");
   my_round(&choise, crea, begin);
 }

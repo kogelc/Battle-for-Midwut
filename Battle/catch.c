@@ -12,23 +12,6 @@
 #include "base.h"
 #include <stdio.h>
 
-
-/*
-t_team	*catch(t_team *begin, t_creature *crea)
-{
-  t_team *team;
-  t_team *next;
-  t_creature *move;
-
-  team = malloc(sizeof(t_team));
-  if (team == NULL)
-    return (NULL);
-  team->name = my_putstr(crea.name);
-  team->next = begin;
-  return(team);
-}
-*/
-
 t_team	*catch(t_creature *crea, t_team *begin)
 {
   t_team	*def;

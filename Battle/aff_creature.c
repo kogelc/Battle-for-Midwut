@@ -69,15 +69,16 @@ void	my_capture(t_creature *crea, t_team *begin)
       my_putstr("\033[01;37m\nFelicitation, creature capturé avec succes !!\n\033[m");
       myteam = catch(crea, begin);
       aff_catch(myteam);
+      menu_battle(&choise, crea, myteam);
     }
   else
   {
     my_putstr("\033[01;37m\nLa creature s'est liberer; elle vous attaque ");
     my_putstr("et vous pousse a fuire \n\033[m");
     my_putstr("\n--------------------------------------------------------------\n\n");
+  my_round(&choise, crea, begin);
   }
   move = move;
-  my_round(&choise, crea, begin);
 }
 
 void	my_escape(t_team *begin)
@@ -88,5 +89,6 @@ void	my_escape(t_team *begin)
   choise = 0;
   crea = NULL;
   my_putstr("\033[01;31m\nVous prenez lachement la fuite ...\n\033[m");
+    my_putstr("\n--------------------------------------------------------------\n\n");
   my_round(&choise, crea, begin);
 }
